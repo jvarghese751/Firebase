@@ -77,6 +77,8 @@ public class MainActivity extends AppCompatActivity {
         IdpResponse response = result.getIdpResponse();
         if (result.getResultCode() == RESULT_OK) {
             FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+            Toast.makeText(this, user.getEmail(), Toast.LENGTH_SHORT).show();
+        }else{
             Toast.makeText(this, "Login Failed", Toast.LENGTH_SHORT).show();
         }
     }
